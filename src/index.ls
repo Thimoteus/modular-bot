@@ -1,7 +1,12 @@
+require! path
 apply = (f, list) -> f.apply null, list
 
 class ModularBot
-   (@library) ~>
+   (library, dirname) ~>
+      if /[\.\/]/.test library
+         @library = path.resolve dirname, library
+      else
+         throw new Error "library must be a relative path"
       @mods = {}
       @initial = void
 

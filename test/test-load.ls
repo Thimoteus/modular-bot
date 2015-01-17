@@ -4,7 +4,7 @@ assert = chai.assert
 Bot = require '../build/index'
 
 library = "./library"
-bot = Bot library
+bot = Bot library, __dirname
 
 that = it
 
@@ -37,7 +37,7 @@ describe "unload-all", ->
    that "should unload all mods", ->
       bot.unload-all!
       assert.deepEqual bot.mods, {}
-      
+
 describe "unload", ->
 
    that "should make an empty @mods property", ->

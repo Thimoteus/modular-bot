@@ -4,7 +4,7 @@ assert = chai.assert
 Bot = require '../build/index'
 
 library = "./library"
-bot = Bot library
+bot = Bot library, __dirname
 
 that = it
 

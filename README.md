@@ -5,7 +5,7 @@ A tool for running bots piece-wise.
 
 ```coffeescript
 Bot = require 'modular-bot'
-bot = new Bot './path-to-library'
+bot = new Bot './relative/path/to/library', __dirname
 
 bot.initiate 'login'
 bot.load 'sayHello'
@@ -13,7 +13,7 @@ bot.load 'sayHello'
 bot.run()
 ```
 
-in `./path-to-library`:
+in `./relative/path/to/library`:
 
 ```coffeescript
 module.exports =
@@ -23,3 +23,5 @@ module.exports =
    sayHello: ->
       console.log "hello!"
 ```
+
+You **must** use `__dirname` as the second argument, and the first argument must be a relative path when instantiating. Future support for absolute paths without the second argument is planned.
