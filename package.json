@@ -1,6 +1,6 @@
 {
   "name": "modular-bot",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A tool for running bots piece-wise",
   "main": "build/index.js",
   "repository": {

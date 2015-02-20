@@ -16,7 +16,7 @@ class ModularBot
 
    load-one: (a-mod) !->
       the-mod = require(@library)[a-mod]
-      throw new Error "Module does not exist" if not the-mod?
+      throw new Error "Module #a-mod does not exist" if not the-mod?
       addition = "#{a-mod}": the-mod
       @mods <<< addition
       console.log "module #{a-mod} loaded"
